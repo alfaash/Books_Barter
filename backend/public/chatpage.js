@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             chatDiv.innerHtml+=`<h1>No Chats</h1>`;
         }
         else{
+            let chattingUsers=[];
             for(let i of dataChats){
                 let chattingUserId=1;
                 let chattingUserName = i.participants[chattingUserId].name;
@@ -62,7 +63,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 }
                 let chattingUserPfp = i.participants[chattingUserId].profilePhoto;
                 let lastMessage=`Start the conversation with ${chattingUserName}`;
-                if(i.lastMessage.message){
+                if(i.lastMessage!=null && i.lastMessage.message){
                     lastMessage=i.lastMessage.message;
                 }
                 //checking chatting users name and pfp
@@ -71,15 +72,19 @@ document.addEventListener("DOMContentLoaded", async function () {
                     userName=i.participants[0].name;
                     userPfp=i.participants[0].profilePhoto;
                 }
-                chatDiv.innerHTML+=`<div class="card my-3 p-lg-3 p-md-3 p-sm-3 p-0 col-12 d-flex align-items-center justify-content-start flex-lg-row flex-md-row flex-sm-row flex-row">
-                        <img src="${chattingUserPfp}" alt="User Image" class="img-fluid mx-lg-3 mx-md-3 mx-sm-3 col-lg-1 col-md-1 col-1" style="max-width: 100px; max-width: 100px; height: auto; width:auto; object-fit: cover; border-radius:50%;">
-                        <div id="nameMessageDiv" class="m-0 px-0 d-flex flex-column align-items-start justify-content-start col-lg-9 col-md-8 col-sm-8 col-8">
-                            <h5 class="" style="font-weight: 900;">${chattingUserName}</h5>
-                            <p class="text-secondary">${lastMessage}</p>
-                        </div>
-                        <i class="fa-solid fa-chevron-right col-lg-2 col-md-2 col-sm-2 col-xs-2 p-0" id="openChatIcon" onClick="openChat('${i._id}','${userPfp}','${userName}')"></i>
-                        <div class="notification-badge" id="notif-${i._id}"></div>
-                    </div>`
+                if(chattingUsers.includes(userName)==false){
+                    chattingUsers.push(userName);
+                    chatDiv.innerHTML+=`<div class="card my-3 p-lg-3 p-md-3 p-sm-3 p-0 col-12 d-flex align-items-center justify-content-start flex-lg-row flex-md-row flex-sm-row flex-row">
+                            <img src="${chattingUserPfp}" alt="User Image" class="img-fluid mx-lg-3 mx-md-3 mx-sm-3 col-lg-1 col-md-1 col-1" style="max-width: 100px; max-width: 100px; height: auto; width:auto; object-fit: cover; border-radius:50%;">
+                            <div id="nameMessageDiv" class="m-0 px-0 d-flex flex-column align-items-start justify-content-start col-lg-9 col-md-8 col-sm-8 col-8">
+                                <h5 class="" style="font-weight: 900;">${chattingUserName}</h5>
+                                <p class="text-secondary">${lastMessage}</p>
+                            </div>
+                            <i class="fa-solid fa-chevron-right col-lg-2 col-md-2 col-sm-2 col-xs-2 p-0" id="openChatIcon" onClick="openChat('${i._id}','${userPfp}','${userName}')"></i>
+                            <div class="notification-badge" id="notif-${i._id}"></div>
+                        </div>`;
+                }
+
                 if (i.unreadCount > 0) {
                     document.getElementById(`notif-${i._id}`).classList.add("active");
                 }

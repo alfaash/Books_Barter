@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         window.location.href = "browse.html";
         return;
     }
-
     // 2. Fetch book details from backend
     try {
         const response = await fetch(`http://localhost:5000/api/v1/books/${bookId}`, {
@@ -113,4 +112,76 @@ document.addEventListener("DOMContentLoaded", async function () {
     } catch (error) {
         console.error('An error occured: ', error);
     }
+
+// --- SWAP BUTTON HANDLER ---
+const swapBtn = document.getElementById("modalSwapBtn"); 
+
+async function sendSwapRequest(bookId) {
+  const token = localStorage.getItem("token");
+  if (!token) {
+    alert("Please login to send a swap request.");
+    return;
+  }
+
+  const endpoint = "http://localhost:5000/api/v1/swap"; // change if your route is /api/v1/swap
+
+  // UI: disable button while request in-flight
+  const btn = document.getElementById("modalSwapBtn");
+  btn.disabled = true;
+  const originalText = btn.innerText;
+  btn.innerText = "Sending...";
+
+  try {
+    const res = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ bookId }),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      // backend may send different error formats; handle common cases
+      const message = data.error || data.msg || data.message || "Failed to send swap request";
+      throw new Error(message);
+    }
+
+    // success
+    console.log("Swap request created:", data);
+    alert(data.msg || "Swap request sent successfully!");
+
+    // optionally update UI: e.g., change button text or hide it
+    btn.innerText = "Request Sent";
+    btn.disabled = true;
+
+    return data;
+  } catch (err) {
+    console.error("Error sending swap request:", err);
+    alert(err.message || "An error occurred while sending the swap request.");
+  } finally {
+    // restore state if still enabled
+    const b = document.getElementById("modalSwapBtn");
+    if (b && b.innerText !== "Request Sent") {
+      b.disabled = false;
+      b.innerText = originalText;
+    }
+  }
+}
+
+// attach event listener (call sendSwapRequest with the bookId you already extracted)
+const attachSwapHandler = () => {
+  const btn = document.getElementById("modalSwapBtn");
+  btn.addEventListener("click", () => {
+    sendSwapRequest(bookId);
+  });
+};
+
+// call attach after you've confirmed bookId is available
+attachSwapHandler();
+
+
+
 });

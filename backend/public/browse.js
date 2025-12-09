@@ -137,7 +137,7 @@ async function openModal(title, author, condition, img, owner,bookId) {
                 : detail.description?.value;
 
             const truncatedDesc = desc
-                ? desc.split(" ").slice(0, 60).join(" ") + (desc.split(" ").length > 100 ? "......" : "")
+                ? desc.split(" ").slice(0, 40).join(" ") + (desc.split(" ").length > 60 ? "......" : "")
                 : "Not available.";
             document.getElementById("modalDescp").innerText = truncatedDesc;
 
