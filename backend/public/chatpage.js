@@ -23,7 +23,7 @@ function getCurrentTime() {
 document.addEventListener("DOMContentLoaded", async function () {
     // loading profile
     try {
-        const response = await fetch('http://localhost:5000/api/v1/users', {
+        const response = await fetch('https://books-barter.onrender.com/api/v1/users', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     
     // Get all chats
     try {
-        const chats = await fetch('http://localhost:5000/api/v1/chat', {
+        const chats = await fetch('https://books-barter.onrender.com/api/v1/chat', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ async function openChat(chatId,userPfp,userName){
     activeChatId=chatId;
     // Marking messages as read when chat is opened
     try{
-        const chats = await fetch(`http://localhost:5000/api/v1/chat/${chatId}/read`, {
+        const chats = await fetch(`https://books-barter.onrender.com/api/v1/chat/${chatId}/read`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -116,7 +116,7 @@ async function openChat(chatId,userPfp,userName){
     // Fetching all the messages 
     let dataChats;
     try{
-        const chats = await fetch(`http://localhost:5000/api/v1/chat/${chatId}`, {
+        const chats = await fetch(`https://books-barter.onrender.com/api/v1/chat/${chatId}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -168,7 +168,7 @@ async function openChat(chatId,userPfp,userName){
 }
 async function closeOverlay(){
     try{
-        const chats = await fetch(`http://localhost:5000/api/v1/chat/${chatId}/read`, {
+        const chats = await fetch(`https://books-barter.onrender.com/api/v1/chat/${chatId}/read`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -192,7 +192,7 @@ async function closeOverlay(){
 socket.on('message',async message=>{
     // Marking messages as read when chat is opened
     try{
-        const chats = await fetch(`http://localhost:5000/api/v1/chat/${chatId}/read`, {
+        const chats = await fetch(`https://books-barter.onrender.com/api/v1/chat/${chatId}/read`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -234,7 +234,7 @@ messageSendButton.addEventListener("click",async e=>{
     }
     // sending a message
     try {
-        const response = await fetch(`http://localhost:5000/api/v1/chat/${activeChatId}/message`, {
+        const response = await fetch(`https://books-barter.onrender.com/api/v1/chat/${activeChatId}/message`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -253,7 +253,7 @@ messageSendButton.addEventListener("click",async e=>{
     }
     // marking messages as read while sending them
     try{
-        const chats = await fetch(`http://localhost:5000/api/v1/chat/${chatId}/read`, {
+        const chats = await fetch(`https://books-barter.onrender.com/api/v1/chat/${chatId}/read`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',

@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // loading profile
     try {
         const token=localStorage.getItem('token');
-        const response = await fetch('http://localhost:5000/api/v1/users', {
+        const response = await fetch('https://books-barter.onrender.com/api/v1/users', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -129,7 +129,7 @@ uploadBtn.addEventListener("click", async () => {
 
   console.log("Form data: ",[...formData]);
   try {
-    const res = await fetch("http://localhost:5000/api/v1/books", {
+    const res = await fetch("https://books-barter.onrender.com/api/v1/books", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`, // 🔥 assumes you store JWT in localStorage

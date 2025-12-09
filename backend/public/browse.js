@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', async() => {
     AOS.init();
     const token = localStorage.getItem("token"); 
     try {
-        const response = await fetch('http://localhost:5000/api/v1/users', {
+        const response = await fetch('https://books-barter.onrender.com/api/v1/users', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async() => {
         });
         console.log(queryParams.toString());
 
-        const response = await fetch(`http://localhost:5000/api/v1/books?${queryParams.toString()}`, {
+        const response = await fetch(`https://books-barter.onrender.com/api/v1/books?${queryParams.toString()}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', async() => {
         let owner_data;
         for (let i = 0; i < book_data.length; i++) {
             try {
-                const ownerResponse = await fetch(`http://localhost:5000/api/v1/users/${book_data[i].ownerID}`, {
+                const ownerResponse = await fetch(`https://books-barter.onrender.com/api/v1/users/${book_data[i].ownerID}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', async() => {
                 console.log("An error occurred while fetching owner details:", error);
             }
 
-            let img_url = `http://localhost:5000${book_data[i].photo}`;
+            let img_url = `https://books-barter.onrender.com${book_data[i].photo}`;
             let book_condition = book_data[i].condition === "New" ? "new" :
                                 book_data[i].condition === "Like New" ? "mid" : "low";
             
@@ -184,7 +184,7 @@ async function search(){
         });
         console.log(queryParams.toString());
 
-        const response = await fetch(`http://localhost:5000/api/v1/books?${queryParams.toString()}`, {
+        const response = await fetch(`https://books-barter.onrender.com/api/v1/books?${queryParams.toString()}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -219,7 +219,7 @@ async function search(){
         let owner_data;
         for (let i = 0; i < book_data.length; i++) {
             try {
-                const ownerResponse = await fetch(`http://localhost:5000/api/v1/users/${book_data[i].ownerID}`, {
+                const ownerResponse = await fetch(`https://books-barter.onrender.com/api/v1/users/${book_data[i].ownerID}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -231,7 +231,7 @@ async function search(){
                 console.log("An error occurred while fetching owner details:", error);
             }
 
-            let img_url = `http://localhost:5000${book_data[i].photo}`;
+            let img_url = `https://books-barter.onrender.com${book_data[i].photo}`;
             let book_condition = book_data[i].condition === "New" ? "new" :
                                 book_data[i].condition === "Like New" ? "mid" : "low";
             

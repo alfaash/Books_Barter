@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
     // 2. Fetch book details from backend
     try {
-        const response = await fetch(`http://localhost:5000/api/v1/books/${bookId}`, {
+        const response = await fetch(`https://books-barter.onrender.com/api/v1/books/${bookId}`, {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${token}`,
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         const book = await response.json();
         try {
-            const ownerResponse = await fetch(`http://localhost:5000/api/v1/users/${book.ownerID}`, {
+            const ownerResponse = await fetch(`https://books-barter.onrender.com/api/v1/users/${book.ownerID}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         genreElement.innerText = book.genre;
         conditionElement.innerText = book.condition;
         ownerElement.innerText = owner_data.name || "Unknown"; // assuming backend sends owner name
-        bookImageElement.src = `http://localhost:5000${book.photo}`;
+        bookImageElement.src = `https://books-barter.onrender.com${book.photo}`;
 
     } catch (error) {
         console.error("Error fetching book:", error);
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // loading profile
     try {
-        const response = await fetch('http://localhost:5000/api/v1/users', {
+        const response = await fetch('https://books-barter.onrender.com/api/v1/users', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -123,7 +123,7 @@ async function sendSwapRequest(bookId) {
     return;
   }
 
-  const endpoint = "http://localhost:5000/api/v1/swap"; // change if your route is /api/v1/swap
+  const endpoint = "https://books-barter.onrender.com/api/v1/swap"; // change if your route is /api/v1/swap
 
   // UI: disable button while request in-flight
   const btn = document.getElementById("modalSwapBtn");
