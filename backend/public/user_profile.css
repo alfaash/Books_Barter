@@ -1,0 +1,57 @@
+.headline-font {
+    font-family: 'Lora', 'Poppins', sans-serif;
+}
+.work-sans-font {
+    font-family: 'Work Sans', sans-serif;
+}
+.libre-baskerville-font {
+    font-family: 'Libre Baskerville', serif;
+}
+body{
+background-image: url("full-bloom.webp");
+}
+#profile_pic{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit:cover;
+}
+.carousel-item img{
+    height: 500px;
+    width: 350px;
+}
+#top_navbar{
+    background-color: rgba(238, 236, 233,0.5);
+}
+#navbar_img_div{
+    height: 10vh;
+}
+#navbar_img_div img{
+    height:8vh; 
+}
+@media(max-width:640px){
+    #navbar_img_div img{
+        height:4.5vh;
+    }
+}
+#navbar_pp img{
+    border-radius:50%;
+    height: 6vh;
+    width:6vh;
+}
+#right_switch button{
+    border: none;
+    background-color: transparent;
+}
+#left_switch button{
+    border: none;
+    background-color: transparent;
+}
+#book_image {
+    height:400px;
+    width: 250px;
+    transition: opacity 0.5s ease;
+}
+.fade-out {
+    opacity: 0;
+}

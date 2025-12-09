@@ -1,0 +1,205 @@
+body {
+    background-image: url("full-bloom.webp");
+}
+.headline-font {
+    font-family: 'Lora', 'Poppins', sans-serif;
+}
+.work-sans-font {
+    font-family: 'Work Sans', sans-serif;
+}
+.libre-baskerville-font {
+    font-family: 'Libre Baskerville', serif;
+}
+input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+}
+#top_navbar{
+    background-color: rgba(238, 236, 233,0.5);
+}
+#navbar_img_div{
+    height: 10vh;
+}
+#navbar_img_div img{
+    height:8vh; 
+}
+@media(max-width:640px){
+    #navbar_img_div img{
+        height:4.5vh;
+    }
+}
+#navbar_pp img{
+    border-radius:50%;
+    height: 6vh;
+    width:6vh;
+}
+#navbar_searchbar form{
+    background-color: white;
+    border-radius: 1rem;
+}
+#navbar_searchbar input{
+    border-radius: 1rem 0 0 1rem;
+    border:none;
+    outline:none;
+}
+#bottom_navbar{
+     background-color: rgba(238, 236, 233,0.5);
+}
+#navbar_pp img{
+    object-fit:cover;
+}
+
+
+
+
+/* UPLOAD BOOK */
+
+
+
+#upload_sec{
+    background-color:rgba(245,245,245,0.5);
+    border: 1px solid black;
+    border-radius:20px;
+
+}
+.upload-box {
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    width: 350px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: border 0.3s;
+    background: #fff;
+    cursor: pointer;
+}
+
+.upload-box.dragover {
+    border-color: #3b82f6;
+    background: #f0f8ff;
+}
+
+.upload-box p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.upload-box a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.preview {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    gap: 15px;
+}
+
+.preview img {
+    width: 100px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+#upload_logo{
+    font-size: 30px;
+}
+
+/* NAME INPUT CSS */
+.input {
+    position: relative;
+}
+.input input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+.input p {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    transition: top .2s ease, transform .2s ease, font-size .2s ease, color .2s ease;
+    pointer-events: none; /* clicks go to input */
+}
+
+.input:focus-within p,
+.input input:not(:placeholder-shown) + p {
+    top: 0;
+    transform: translateY(-120%);
+    font-size: 14px;
+}
+/* GENRE DROPDOWN */
+.form-select{
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width:216px;
+}
+/* Upload Button */
+#upload_button{
+    border-radius:10px;
+    padding: 2px 15px;
+    background-color: transparent;
+    transition:0.2s ease;
+}
+#upload_button:hover{
+    transform: scale(1.1);
+}
+
+/* BOTTOM NAVIGATION BAR */
+#bottomNavBar{
+    border-radius:1rem;
+    width:60%;
+    background-color: rgba(128,128,128,0.4);
+    position:fixed;
+    bottom:5%;
+    left:20%;
+}
+#bottomNavBar a{
+    color:black;
+    text-decoration: none;
+    transition:linear;
+    transition-duration: 120ms;
+}
+#bottomNavBar a:hover{
+    transform: scale(1.05);
+}
+#uploadBookBtn{
+    border-radius: 0.5rem;
+    color: white !important;
+    background-color: rgb(52, 115, 231);
+}
+#currentPage{
+    color: rgb(52, 115, 231) !important;
+    background-color: rgba(209, 218, 236,0.8); 
+    padding:5px 20px; 
+    border-radius: 0.5rem;
+}
+@media (max-width: 768px) {
+    #bottomNavBar a span {
+        display: none;  /* hides text */
+    }
+
+    #bottomNavBar a {
+        padding: 0 !important; /* optional: makes icons closer */
+    }
+    #bottomNavBar .col-6:first-child {
+        justify-content: space-evenly;
+    }
+}
+
+

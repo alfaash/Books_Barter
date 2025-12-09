@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Lora&family=Libre+Baskerville&family=Merriweather&family=Nunito&family=Poppins&family=Work+Sans&display=swap');
+
+/* Serif Fonts - Literary, Bookish Feel */
+
+.lora-font {
+    font-family: 'Lora', serif;
+}
+
+.libre-baskerville-font {
+    font-family: 'Libre Baskerville', serif;
+}
+
+.merriweather-font {
+    font-family: 'Merriweather', serif;
+}
+
+
+/* Sans-serif Fonts - Modern, Clean Feel */
+
+.poppins-font {
+    font-family: 'Poppins', sans-serif;
+}
+
+.nunito-font {
+    font-family: 'Nunito', sans-serif;
+}
+
+.inter-font {
+    font-family: 'Inter', sans-serif;
+}
+
+.work-sans-font {
+    font-family: 'Work Sans', sans-serif;
+}
+
+
+/* Example Combination - Headline and Body */
+
+.headline-font {
+    font-family: 'Lora', 'Poppins', sans-serif;
+}
+
+.body-font {
+    font-family: 'Poppins', 'Nunito', sans-serif;
+}
+
+
+/* ----------------------------------------------MAIN CSS--------------------------------------------------------- */
+
+/* Body stays plain */
+body {
+    margin: 0;
+}
+
+/* Background image only for MAIN SECTION */
+#main_section {
+    height: 100vh;
+    width: 100vw;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url('mainpage_desktop.jpg') no-repeat center center/cover;
+    background-blend-mode: darken;
+    position: relative;
+}
+
+/* Optional dark overlay (if you want it) */
+#main_section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* Make sure your content sits above the overlay */
+#main_section > * {
+    position: relative;
+    z-index: 2;
+    color: white; /* Optional: text color over image */
+}
+
+#tagline{
+    font-size:6vh;
+    color:#FFEBCD;
+    text-shadow: #FFEBCD 1px 0 10px;
+}
+#mainpage_btn{
+    border:1px solid #FFEBCD;
+    font-size:2.2vh;
+    background-color: #FFEBCD;
+    color:#a16325;
+    transition:transform 200ms ;
+}
+#mainpage_btn:hover{
+    text-shadow: #a16325 1px 0 10px;
+    transform: scale(1.1);   
+}
+
+/* WHY US section: Normal content */
+#whyUs {
+    background-color: #572d00;
+    background-image: url("https://www.transparenttextures.com/patterns/rice-paper-2.png");
+    padding: 50px 20px;
+    text-align: center;
+    font-size: 2rem;
+    position: relative;
+    width:100vw;
+}
+#whyUs h1{
+    color:#e2d1b8;
+}
+#card1 i{
+    height: 22.3vh;
+    font-size: 10vh;
+    color: #006400;
+}
+#card2 i{
+    height: 22.3vh;
+    font-size: 10vh;
+    color:#004080;
+}
+#card3 i{
+    height: 22.3vh;
+    font-size: 10vh;
+    color:#228B22;
+}
+#card1,#card2,#card3{
+    background-color: #e2d1b8;
+}
+#cards{
+    font-size: 3vh;
+}
+.card{
+    transition: transform 200ms;
+}
+.card:hover{
+    transform:scale(1.01);
+}
+
+/* FEATURED BOOKS SECTION */
+#featured{ 
+    width:100vw;
+    background-color: #572d00;
+    background-image: url("https://www.transparenttextures.com/patterns/rice-paper-2.png");
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+}
+#featured_main{
+    background-color: #e2d1b8;
+    border-radius:1rem;
+}
+#featured h2{
+    color:black;
+}
+#featured p{
+    color:#6d5f49;
+}
+#button-div a{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius:0.3rem;
+    padding:5px 26px 5px 30px;
+    font-size:12px;
+}
+#featured_main img{
+    width: 30vh;
+}
+#card1_featured,#card2_featured,#card3_featured,#card4_featured{
+    background-color:#e2d1b8;
+    border-radius:1rem;
+    border:none;
+}
+#featured_books div{
+    width:10vw;
+}
+#featured_books{
+    overflow: hidden;
+}

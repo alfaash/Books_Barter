@@ -1,0 +1,294 @@
+.headline-font {
+    font-family: 'Lora', 'Poppins', sans-serif;
+}
+.work-sans-font {
+    font-family: 'Work Sans', sans-serif;
+}
+.libre-baskerville-font {
+    font-family: 'Libre Baskerville', serif;
+}
+input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+}
+body{
+background-image: url("full-bloom.webp");
+}
+#top_navbar{
+    background-color: rgba(238, 236, 233,0.5);
+}
+#navbar_img_div{
+    height: 10vh;
+}
+#navbar_img_div img{
+    height:8vh; 
+}
+@media(max-width:640px){
+    #navbar_img_div img{
+        height:4.5vh;
+    }
+}
+#navbar_pp img{
+    border-radius:50%;
+    height: 6vh;
+    width:6vh;
+}
+#navbar_searchbar button{
+    border:none;
+    background-color: transparent;
+}
+#navbar_searchbar form{
+    background-color: white;
+    border-radius: 1rem;
+}
+#navbar_searchbar input{
+    border-radius: 1rem 0 0 1rem;
+    border:none;
+    outline:none;
+}
+#bottom_navbar{
+     background-color: rgba(238, 236, 233,0.5);
+}
+#navbar_pp img{
+    object-fit:cover;
+}
+#navbar_searchbar i{
+    transition: transform 0.5s ease;
+}
+#navbar_searchbar i:hover{
+    transform: rotate(360deg);
+}
+#filter-bar-container{
+     background-color: rgba(238, 236, 233,0.5);
+}
+#filterNavbar i{
+    font-size: 1.5rem;
+}
+#filterNavbar select{
+    border-radius: 0.8rem;
+    padding: 1px;
+}
+#books_row .book{
+    transition: transform 0.2s ease;
+}
+#books_row .book:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.01);
+    transition: all 0.3s ease-in-out;
+}
+#books_row .book img{
+    height: 39vh;
+    /* width:11vw; */
+}
+.book h5{
+    font-weight:600;
+}
+.book p{
+    font-size: 12px;
+    color:gray;  
+    font-family:sans-serif;  
+}
+.book img{
+box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.badge-condition-new {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: #4bbc65; /* Green for "New" */
+  color: white;
+  padding: 3px 8px;
+  font-size: 9px;
+  font-weight: bold;
+  border-radius: 50px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  font-family: 'Segoe UI', sans-serif;
+}
+.badge-condition-mid {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: #7bc0c2; /* Green for "New" */
+  color: white;
+  padding: 3px 8px;
+  font-size: 9px;
+  font-weight: bold;
+  border-radius: 50px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+    font-family: 'Segoe UI', sans-serif;
+}
+.badge-condition-low {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: #fe966d; /* Green for "New" */
+  color: white;
+  padding: 3px 8px;
+  font-size: 9px;
+  font-weight: bold;
+  border-radius: 50px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  font-family: 'Segoe UI', sans-serif;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 1rem;
+}
+.modal-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 700px;
+  max-height: 1000px;
+  height: 80%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.4s ease;
+}
+
+.modal-card img {
+  max-width: 18vw;
+  margin: 1rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px; right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.close-btn:focus{
+    outline: none;
+}
+#modalTitle,#modalAuthor,#modalCondition,#modalOwner,#modalDesc{
+    font-size: 1.5rem;
+    font-weight:bold;
+    margin:6px 0 6px 0;
+}
+#modalDesc{
+    text-align: start;
+}
+#modalTitlep,#modalAuthorp,#modalConditionp,#modalOwnerp{
+    font-size: 1.2rem;
+    font-weight: 50;
+    color: rgb(63, 57, 57);
+}
+#modalDescp{
+    font-size: 1rem;
+    font-weight: 50;
+    text-align:left;
+    max-width: 330px;
+}
+
+.swap-link {
+    text-decoration: none;
+}
+
+.swap-btn {
+    background-color: white;
+    border: none;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.swap-btn .arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+.swap-btn:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.08);
+}
+
+.swap-btn:hover .arrow-icon {
+    transform: translateX(3px);
+}
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 480px) {
+    .modal-card {
+        padding: 1rem;
+    }
+    .modal-card img {
+        width: 10vh;
+    }
+    .modal-card{
+        height: 80%;
+    }
+    #modalIMGDIV{
+        max-height: 0.1vh;
+    }
+    #modalImage{
+        display: none;
+    }
+    #books_row .book img{
+        height: 34vh;
+        /* width:11vw; */
+    }
+}
+
+/* BOTTOM NAVIGATION BAR */
+#bottomNavBar{
+    border-radius:1rem;
+    width:60%;
+    background-color: rgba(128,128,128,0.4);
+    position:fixed;
+    bottom:5%;
+    left:20%;
+}
+#bottomNavBar a{
+    color:black;
+    text-decoration: none;
+    transition:linear;
+    transition-duration: 120ms;
+}
+#bottomNavBar a:hover{
+    transform: scale(1.05);
+}
+#uploadBookBtn{
+    border-radius: 0.5rem;
+    color: white !important;
+    background-color: rgb(52, 115, 231);
+}
+#currentPage{
+    color: rgb(52, 115, 231) !important;
+    background-color: rgba(209, 218, 236,0.8); 
+    padding:5px 20px; 
+    border-radius: 0.5rem;
+}
+@media (max-width: 768px) {
+    #bottomNavBar a span {
+        display: none;  /* hides text */
+    }
+
+    #bottomNavBar a {
+        padding: 0 !important; /* optional: makes icons closer */
+    }
+    #bottomNavBar .col-6:first-child {
+        justify-content: space-evenly;
+    }
+}
+

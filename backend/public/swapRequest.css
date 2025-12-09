@@ -1,0 +1,118 @@
+/* Navbar CSS */
+body {
+    background-image: url("full-bloom.webp");
+}
+.headline-font {
+    font-family: 'Lora', 'Poppins', sans-serif;
+}
+.work-sans-font {
+    font-family: 'Work Sans', sans-serif;
+}
+.libre-baskerville-font {
+    font-family: 'Libre Baskerville', serif;
+}
+input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+}
+#top_navbar{
+    background-color: rgba(238, 236, 233,0.5);
+}
+#navbar_img_div{
+    height: 10vh;
+}
+#navbar_img_div img{
+    height:8vh; 
+}
+@media(max-width:640px){
+    #navbar_img_div img{
+        height:4.5vh;
+    }
+}
+#navbar_pp img{
+    border-radius:50%;
+    height: 6vh;
+    width:6vh;
+}
+#navbar_searchbar form{
+    background-color: white;
+    border-radius: 1rem;
+}
+#navbar_searchbar input{
+    border-radius: 1rem 0 0 1rem;
+    border:none;
+    outline:none;
+}
+#bottom_navbar{
+     background-color: rgba(238, 236, 233,0.5);
+}
+#navbar_pp img{
+    object-fit:cover;
+}
+
+/* Main CSS */
+.row .card{
+    border-radius: 1rem;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+#acceptBtn{
+    color:whitesmoke;
+    background-color: #39E079;
+    border-radius:11px;
+    border:none;
+}
+#acceptBtn:hover{
+    transform: scale(1.1);
+    transition-duration: 250ms;
+}
+#rejectBtn{
+    color:whitesmoke;
+    background-color: #EA2831;
+    border-radius:11px;
+    border:none;
+}
+#rejectBtn:hover{
+    transform: scale(1.1);
+    transition-duration: 250ms;
+}
+
+/* BOTTOM NAVIGATION BAR */
+#bottomNavBar{
+    border-radius:1rem;
+    width:60%;
+    background-color: rgba(128,128,128,0.4);
+    position:fixed;
+    bottom:5%;
+    left:20%;
+}
+#bottomNavBar a{
+    color:black;
+    text-decoration: none;
+    transition:linear;
+    transition-duration: 120ms;
+}
+#bottomNavBar a:hover{
+    transform: scale(1.05);
+}
+#uploadBookBtn{
+    border-radius: 0.5rem;
+    color: white !important;
+    background-color: rgb(52, 115, 231);
+}
+#currentPage{
+    color: rgb(52, 115, 231) !important;
+    background-color: rgba(209, 218, 236,0.8); 
+    padding:5px 20px; 
+    border-radius: 0.5rem;
+}
+@media (max-width: 768px) {
+    #bottomNavBar a span {
+        display: none;  /* hides text */
+    }
+
+    #bottomNavBar a {
+        padding: 0 !important; /* optional: makes icons closer */
+    }
+    #bottomNavBar .col-6:first-child {
+        justify-content: space-evenly;
+    }
+}
